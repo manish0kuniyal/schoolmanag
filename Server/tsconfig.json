@@ -7,8 +7,9 @@
     "strict": true,                      // Enable strict type checking
     "esModuleInterop": true,             // Allow default imports for CommonJS modules
     "resolveJsonModule": true,           // Allow importing JSON files
-    "skipLibCheck": true                 // Skip type checks for dependencies
+    "skipLibCheck": true ,
+    "moduleResolution": "node"                // Skip type checks for dependencies
   },
-  "include": ["src"],                    // Files to include
+  "include": ["src/**/*"],                    // Files to include
   "exclude": ["node_modules"]            // Files to exclude
 }
