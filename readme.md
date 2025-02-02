@@ -55,6 +55,7 @@ Allow users to create branded short URLs (e.g., short.ly/myproduct), not just ra
 # what are we building
 - a link tracking app that will track the  link to a site clicked from different sites ( like linkedin ,blogs , instagram etc ) and provide info ot user about it.
 - similar to link drip
+- can also provide geo location info
 
 # How will teh concept work ?
 - by assigning query parameters to a link and then tracking that link 
