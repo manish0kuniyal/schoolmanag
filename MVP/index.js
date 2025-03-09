@@ -8,7 +8,7 @@ app.set('views', __dirname + '/views');
 
 const connectDB=async()=>{
     try{await 
-mongoose.connect(process.env.URL)
+mongoose.connect(process.env.URL,{ useNewUrlParser: true, useUnifiedTopology: true })
 console.log("..connected to DB")
 }
 catch(err){
