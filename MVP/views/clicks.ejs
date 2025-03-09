@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Tracker Data</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; padding: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid black; padding: 8px; text-align: left; }
+        th { background-color: #f4f4f4; }
+    </style>
+</head>
+<body>
+
+    <h2>Click Data Overview</h2>
+    
+    <h3>Sources</h3>
+    <table>
+        <tr>
+            <th>Source</th>
+            <th>Clicks</th>
+        </tr>
+        <% let sourceCount = {}; %>
+        <% clicks.forEach(click => { %>
+            <% sourceCount[click.source] = (sourceCount[click.source] || 0) + 1; %>
+        <% }) %>
+        
+        <% Object.keys(sourceCount).forEach(source => { %>
+            <tr>
+                <td><%= source %></td>
+                <td><%= sourceCount[source] %></td>
+            </tr>
+        <% }) %>
+    </table>
+
+    <h3>Click Details</h3>
+    <table>
+        <tr>
+            <th>IP Address</th>
+            <th>User Agent</th>
+            <th>Referer</th>
+            <th>Origin</th>
+            <th>Source</th>
+            <th>Time</th>
+        </tr>
+        <% clicks.forEach(click => { %>
+            <tr>
+                <td><%= click.ip %></td>
+                <td><%= click.userAgent %></td>
+                <td><%= click.referer %></td>
+                <td><%= click.origin %></td>
+                <td><%= click.source %></td>
+                <td><%= new Date(click.timestamp).toLocaleString() %></td>
+            </tr>
+        <% }) %>
+    </table>
+
+</body>
+</html>
