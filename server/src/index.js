@@ -9,7 +9,9 @@ connectDB()
 
 app.use(express.json())
 app.use('/auth',authRoutes)
-
+app.get('/',(req,res)=>{
+    res.json({msg:"live ... 🔥"})
+})
 app.listen(3000,()=>{
     console.log("...on 3000")
 })
