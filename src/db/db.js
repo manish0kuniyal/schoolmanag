@@ -1,4 +1,4 @@
-const { Pool } = require('pg');
+const { Pool } = require('pg')
 require ('dotenv').config()
 // Comment out local configuration
 // const pool = new Pool({
@@ -11,9 +11,8 @@ require ('dotenv').config()
 
 const pool = new Pool({
   connectionString:process.env.DB_url 
-  // 'postgresql://postgres:only04supabase@db.xcdglghjfwnpfmzkobym.supabase.co:5432/postgres'
-});
-// ✅ Log DB connection
+})
+
 pool.connect((err, client, release) => {
   if (err) {
     return console.error('...Failed to connect to DB:', err.stack)
